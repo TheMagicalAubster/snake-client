@@ -12,9 +12,29 @@ const connect = function() {
       console.log('Connected to game server');
     });
     
-    conn.on('connect', (name = 'Name: ABP') => {
-       console.log('Sending Name: ', name) ;
+    conn.on('connect', () => {
+       conn.write("Name: Pinky & Brain") ;
       });
+
+    // conn.on('connect', () => {
+    //    conn.write("Move: up") ;
+    //    });
+
+    // conn.on('connect', () => {
+    //    setInterval(() => {
+    //        conn.write("Move: left")}, 50) ;
+    //    });
+
+    // conn.on('connect', () => {
+    //     setTimeout(() => {
+    //         conn.write("Move: down")}, 1000) ;
+    //     });
+    
+    // conn.on('connect', () => {
+    //     setTimeout(() => {
+    //         conn.write("Move: right")}, 1500) ;
+    //         });
+
     return conn;
 }
 
