@@ -1,22 +1,12 @@
 //play.js
+
 const { connect } = require('./client');
+const { setupInput } = require('./input');
+// const { handleUserInput } = require('./input');
 console.log('Connecting ...');
 connect();
+setupInput();
 
-const handleUserInput = function(key) {
-    if (key === '\u0003') {
-        process.exit();
-      }
-  }
 
-const setupInput = function() {
-    const stdin = process.stdin;
-    stdin.setRawMode(true);
-    stdin.setEncoding('utf8');
-    stdin.resume();
-    
-    return stdin;
-  }
-
-  const stdin = setupInput();
-  stdin.on('data', handleUserInput);
+//   const stdin = 
+//   stdin.on('data', handleUserInput);
